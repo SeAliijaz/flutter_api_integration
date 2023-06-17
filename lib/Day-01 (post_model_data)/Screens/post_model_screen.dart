@@ -5,14 +5,14 @@ import 'package:flutter_api_integration/Constants/k.dart';
 import 'package:flutter_api_integration/Day-01%20(post_model_data)/Models/posts_model.dart';
 import 'package:http/io_client.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class PostModelScreen extends StatefulWidget {
+  const PostModelScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<PostModelScreen> createState() => _PostModelScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _PostModelScreenState extends State<PostModelScreen> {
   ///Empty list to fetch and assign
   List<PostsModel> postList = [];
 

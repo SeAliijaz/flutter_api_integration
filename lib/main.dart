@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_api_integration/Day-01%20(post_model_data)/Screens/home_screen.dart';
+import 'package:flutter_api_integration/Day-01%20(post_model_data)/Screens/post_model_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       ///This is the route that is displayed first when the application is started normally,
       ///unless [initialRoute] is specified.
       /// It's also the route that's displayed if the [initialRoute] can't be displayed.
-      home: HomeScreen(),
+      home: PostModelScreen(),
     );
   }
 }
