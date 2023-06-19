@@ -1,9 +1,8 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_api_integration/Constants/k.dart';
 import 'package:flutter_api_integration/Day-01%20(post_model_data)/Models/posts_model.dart';
-import 'package:http/io_client.dart';
+import 'package:http/http.dart' as http;
 
 class PostModelScreen extends StatefulWidget {
   const PostModelScreen({Key? key}) : super(key: key);
@@ -20,27 +19,24 @@ class _PostModelScreenState extends State<PostModelScreen> {
   Future<List<PostsModel>> getPostApiMethod() async {
     const String url = "https://jsonplaceholder.typicode.com/posts";
 
-    // Create an HttpClient instance with certificate verification disabled
-    HttpClient httpClient = HttpClient()
-      ..badCertificateCallback =
-          ((X509Certificate cert, String host, int port) => true);
-
-    // Create an IOClient using the custom HttpClient
-    final ioClient = IOClient(httpClient);
-
-    final response = await ioClient.get(Uri.parse(url));
+    final response = await http.get(Uri.parse(url));
     var data = jsonDecode(response.body.toString());
 
-    if (response.statusCode == 200) {
-      postList.clear();
-      for (var i in data) {
-        postList.add(PostsModel.fromJson(i));
+    try {
+      if (response.statusCode == 200) {
+        postList.clear();
+        for (var i in data) {
+          postList.add(PostsModel.fromJson(i));
+        }
+        return postList;
+      } else {
+        AppConsts.showMessage("Failed to fetch posts");
+        debugPrint("Failed to fetch posts");
+        throw Exception("Failed to fetch posts");
       }
-      return postList;
-    } else {
-      AppConsts.showMessage("Failed to fetch posts");
-      debugPrint("Failed to fetch posts");
-      throw Exception("Failed to fetch posts");
+    } catch (e) {
+      AppConsts.showMessage(e.toString());
+      throw Exception();
     }
   }
 
@@ -49,6 +45,7 @@ class _PostModelScreenState extends State<PostModelScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Fetch Post Data Model'),
+        centerTitle: true,
       ),
       body: FutureBuilder<List<PostsModel>>(
         future: getPostApiMethod(),
