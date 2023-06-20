@@ -15,7 +15,7 @@ class _UserScreenState extends State<UserScreen> {
   List<UserModel> userModelList = [];
 
   Future<List<UserModel>> fetchUserModelData() async {
-    const String uri = "https://jsonplaceholder.typicode.com/users";
+    const String uri = "http://jsonplaceholder.typicode.com/users";
     final response = await http.get(Uri.parse(uri));
     final data = jsonDecode(response.body) as List<dynamic>;
 

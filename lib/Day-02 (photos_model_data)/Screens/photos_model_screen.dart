@@ -16,7 +16,7 @@ class _PhotosModelScreenState extends State<PhotosModelScreen> {
 
   ///Method
   Future<List<PhotosModel>> getPhotosModel() async {
-    const String uri = "https://jsonplaceholder.typicode.com/photos";
+    const String uri = "http://jsonplaceholder.typicode.com/photos";
     final response = await http.get(Uri.parse(uri));
     final data = jsonDecode(response.body.toString());
     try {

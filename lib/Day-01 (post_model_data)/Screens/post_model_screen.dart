@@ -17,7 +17,7 @@ class _PostModelScreenState extends State<PostModelScreen> {
 
   ///Method to FETCH REST API (POSTS)
   Future<List<PostsModel>> getPostApiMethod() async {
-    const String url = "https://jsonplaceholder.typicode.com/posts";
+    const String url = "http://jsonplaceholder.typicode.com/posts";
 
     final response = await http.get(Uri.parse(url));
     var data = jsonDecode(response.body.toString());
