@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       ///This is the route that is displayed first when the application is started normally,
       ///unless [initialRoute] is specified.
       /// It's also the route that's displayed if the [initialRoute] can't be displayed.
-      home: UserScreen(),
+      home: UserModelScreen(),
     );
   }
 }

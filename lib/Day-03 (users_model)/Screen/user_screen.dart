@@ -4,14 +4,14 @@ import 'package:flutter_api_integration/Constants/k.dart';
 import 'package:flutter_api_integration/Day-03%20(users_model)/Model/user_model.dart';
 import 'package:http/http.dart' as http;
 
-class UserScreen extends StatefulWidget {
-  const UserScreen({Key? key}) : super(key: key);
+class UserModelScreen extends StatefulWidget {
+  const UserModelScreen({Key? key}) : super(key: key);
 
   @override
-  State<UserScreen> createState() => _UserScreenState();
+  State<UserModelScreen> createState() => _UserModelScreenState();
 }
 
-class _UserScreenState extends State<UserScreen> {
+class _UserModelScreenState extends State<UserModelScreen> {
   List<UserModel> userModelList = [];
 
   Future<List<UserModel>> fetchUserModelData() async {
@@ -63,19 +63,119 @@ class _UserScreenState extends State<UserScreen> {
                 int index,
               ) {
                 final userModel = userModelList[index];
-                return ListTile(
-                  leading: CircleAvatar(
-                    child: Text(
-                      userModel.name![index],
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    backgroundColor: Colors.blue,
+                return _userModelCard(userModel);
+              },
+              separatorBuilder: (c, i) {
+                return const Divider();
+              },
+            );
+          } else {
+            return const Center(
+              child: Text('No users found.'),
+            );
+          }
+        },
+      ),
+    );
+  }
+
+  ///UserModelCard Method
+  Widget _userModelCard(UserModel userModel) {
+    return Container(
+      color: Colors.grey[100],
+      child: Column(
+        children: [
+          ListTile(
+            onTap: () {},
+            leading: CircleAvatar(
+              ///userModel.name!.characters.first
+              ///This will pick 0 Index Letter of Name
+              child: Text(userModel.name!.characters.first),
+            ),
+            title: SizedBox(
+              height: 50,
+              width: double.infinity,
+              child: Card(
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 5.0),
+                    child: Text("Name: ${userModel.name}"),
                   ),
-                  title: Text("Name: ${userModel.name}"),
-                  subtitle: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Username: ${userModel.username}"),
+                ),
+              ),
+            ),
+            subtitle: Card(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 5.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text("Username: ${userModel.username}"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text("Email: ${userModel.email}"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text("Phone: ${userModel.phone}"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text("Website: ${userModel.website}"),
+                    ),
+                    Padding(
+                        padding: const EdgeInsets.all(3.0),
+                        child: Text("Street: ${userModel.address!.street}")),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text("Suite: ${userModel.address!.suite}"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text("City: ${userModel.address!.city}"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text("Zipcode: ${userModel.address!.zipcode}"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text("Latitude: ${userModel.address!.geo!.lat}"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text("Longitude: ${userModel.address!.geo!.lng}"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text("Company: ${userModel.company!.name}"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text(
+                          "Catch Phrase: ${userModel.company!.catchPhrase}"),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text("BS: ${userModel.company!.bs}"),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+/*
+ userModel.name![index],
+ Text("Username: ${userModel.username}"),
                       Text("Email: ${userModel.email}"),
                       Text("Phone: ${userModel.phone}"),
                       Text("Website: ${userModel.website}"),
@@ -88,22 +188,4 @@ class _UserScreenState extends State<UserScreen> {
                       Text("Company: ${userModel.company!.name}"),
                       Text("Catch Phrase: ${userModel.company!.catchPhrase}"),
                       Text("BS: ${userModel.company!.bs}"),
-                    ],
-                  ),
-                  onTap: () {},
-                );
-              },
-              separatorBuilder: (c, i) {
-                return Divider();
-              },
-            );
-          } else {
-            return const Center(
-              child: Text('No users found.'),
-            );
-          }
-        },
-      ),
-    );
-  }
-}
+*/
