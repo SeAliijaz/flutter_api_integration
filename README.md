@@ -1,6 +1,6 @@
 # 📱 Flutter API Integration
 
-This repository is designed to provide a comprehensive guide for learning Flutter API integration, catering to users at all levels, from beginners to advanced developers. The primary objective of this project is to facilitate a thorough understanding of Flutter's capabilities in consuming and integrating APIs. Throughout the course, we will be using the popular JSONPlaceholder website as a practical platform for practicing API integration.
+This repository is designed to provide a comprehensive guide for learning Flutter API integration, catering to users at all levels, from beginners to advanced developers. The primary objective of this project is to facilitate a thorough understanding of Flutter's capabilities in consuming and integrating APIs. Throughout the course, we will be using the popular [JSONPlaceholder](https://jsonplaceholder.typicode.com/) website as a practical platform for practicing API integration.
 
 ## 🚀 Getting Started
 
