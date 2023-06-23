@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_api_integration/Constants/k.dart';
-import 'package:flutter_api_integration/Day-01%20(post_model_data)/Models/posts_model.dart';
+import 'package:flutter_api_integration/Day-01-(post_model_data)/Models/posts_model.dart';
 import 'package:http/http.dart' as http;
 
 class PostModelScreen extends StatefulWidget {

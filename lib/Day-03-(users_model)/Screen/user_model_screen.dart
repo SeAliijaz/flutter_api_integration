@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_api_integration/Constants/k.dart';
-import 'package:flutter_api_integration/Day-03%20(users_model)/Model/user_model.dart';
+import 'package:flutter_api_integration/Day-03-(users_model)/Model/user_model.dart';
 import 'package:http/http.dart' as http;
 
 class UserModelScreen extends StatefulWidget {
@@ -173,19 +173,3 @@ class _UserModelScreenState extends State<UserModelScreen> {
     );
   }
 }
-/*
- userModel.name![index],
- Text("Username: ${userModel.username}"),
-                      Text("Email: ${userModel.email}"),
-                      Text("Phone: ${userModel.phone}"),
-                      Text("Website: ${userModel.website}"),
-                      Text("Street: ${userModel.address!.street}"),
-                      Text("Suite: ${userModel.address!.suite}"),
-                      Text("City: ${userModel.address!.city}"),
-                      Text("Zipcode: ${userModel.address!.zipcode}"),
-                      Text("Latitude: ${userModel.address!.geo!.lat}"),
-                      Text("Longitude: ${userModel.address!.geo!.lng}"),
-                      Text("Company: ${userModel.company!.name}"),
-                      Text("Catch Phrase: ${userModel.company!.catchPhrase}"),
-                      Text("BS: ${userModel.company!.bs}"),
-*/

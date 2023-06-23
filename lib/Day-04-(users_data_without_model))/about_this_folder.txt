@@ -1,0 +1,5 @@
+In This, We'll Get Data From Same Users Data API, But we'll not make the model.
+
+API URL: --> https://jsonplaceholder.typicode.com/users
+
+We'll Fetch the Data without making the model.
