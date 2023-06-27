@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_api_integration/Day-04-(users_data_without_model))/Screen/user_screen.dart';
+import 'package:flutter_api_integration/Day-05-(products_model)/Screens/products_home_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       ///This is the route that is displayed first when the application is started normally,
       ///unless [initialRoute] is specified.
       /// It's also the route that's displayed if the [initialRoute] can't be displayed.
-      home: UserScreen(),
+      home: ProductsHomeScreen(),
     );
   }
 }
