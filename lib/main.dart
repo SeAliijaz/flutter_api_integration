@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_api_integration/Day-06-(students_data)/Screen/students_data_home_screen.dart';
+import 'package:flutter_api_integration/Post-Method/Day-01-(SignUp)/Screen/sign_up_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
 
       ///Home: [initial Route]
-      home: StudentDataHomeScreen(),
+      home: SignUpScreen(),
     );
   }
 }

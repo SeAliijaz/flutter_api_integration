@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_api_integration/Constants/k.dart';
-import 'package:flutter_api_integration/Day-02-(photos_model_data)/Models/photos_model.dart';
+import 'package:flutter_api_integration/Get-Method/Day-02-(photos_model_data)/Models/photos_model.dart';
 import 'package:http/http.dart' as http;
 
 class PhotosModelScreen extends StatefulWidget {
