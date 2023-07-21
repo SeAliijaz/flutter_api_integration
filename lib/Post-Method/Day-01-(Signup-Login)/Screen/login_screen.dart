@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_api_integration/Constants/k.dart';
 import 'package:flutter_api_integration/Post-Method/Day-01-(Signup-Login)/Widgets/custom_button.dart';
 import 'package:flutter_api_integration/Post-Method/Day-01-(Signup-Login)/Widgets/custom_textformfield.dart';
-import 'package:http/http.dart';
+import 'package:http/http.dart' as http;
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -24,26 +24,22 @@ class _LogInScreenState extends State<LogInScreen> {
       const String uri = "https://reqres.in/api/login";
 
       ///response
-      Response response = await post(Uri.parse(uri), body: {
-        "email",
-        email.toString(),
-        "password",
-        password.toString(),
-      });
-
-      print(response.body.toString());
+      var response = await http.post(
+        Uri.parse(uri),
+        body: {"email": email, "password": password},
+      );
 
       ///statusCode
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
-        print(data);
-        AppConsts.showMessage(
-            context, "Console Message", "Logged In Successfully!");
+
+        AppConsts.showMessage(context, "Congratulations!",
+            "Logged In Successfully!\nToken: ${data["token"]}");
       } else {
-        AppConsts.showMessage(context, "Console Message", "Something Issue!");
+        AppConsts.showMessage(context, "Error Message", "Something Issue!");
       }
     } catch (e) {
-      AppConsts.showMessage(context, "Console Message", e.toString());
+      AppConsts.showMessage(context, "Error Message", e.toString());
     }
   }
 
@@ -68,7 +64,7 @@ class _LogInScreenState extends State<LogInScreen> {
               hintText: "Enter Your Password",
             ),
 
-            ///Action Button
+            ///LogIn Button
             CustomButton(
               title: "LogIn",
               onPressed: () {

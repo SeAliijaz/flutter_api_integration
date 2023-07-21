@@ -66,7 +66,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               hintText: "Enter Your Password",
             ),
 
-            ///Action Button
+            ///SingUp Button
             CustomButton(
               title: "SignUp",
               onPressed: () {

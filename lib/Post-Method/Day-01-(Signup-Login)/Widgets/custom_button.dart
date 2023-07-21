@@ -14,8 +14,8 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(
-        vertical: 5.0,
-        horizontal: 5.0,
+        vertical: 10,
+        horizontal: 10,
       ),
       child: MaterialButton(
         color: Colors.blue,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_api_integration/Post-Method/Day-01-(Signup-Login)/Screen/sign_up_screen.dart';
+import 'package:flutter_api_integration/Post-Method/Day-01-(Signup-Login)/Screen/login_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
         ),
       ),
 
-      ///Home: [initial Route]
-      home: SignUpScreen(),
+      ///Home: -> initial Route <-
+      home: LogInScreen(),
     );
   }
 }
