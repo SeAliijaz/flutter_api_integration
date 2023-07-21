@@ -30,12 +30,17 @@ class _PostModelScreenState extends State<PostModelScreen> {
         }
         return postList;
       } else {
-        AppConsts.showMessage("Failed to fetch posts");
+        AppConsts.showMessage(
+            context, "Error Message", "Failed to fetch posts");
         debugPrint("Failed to fetch posts");
         throw Exception("Failed to fetch posts");
       }
     } catch (e) {
-      AppConsts.showMessage(e.toString());
+      AppConsts.showMessage(
+        context,
+        "Error Message",
+        e.toString(),
+      );
       throw Exception();
     }
   }

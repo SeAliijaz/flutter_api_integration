@@ -29,7 +29,7 @@ class _ProductsHomeScreenState extends State<ProductsHomeScreen> {
         return ProductsModel.fromJson(data);
       }
     } catch (e) {
-      AppConsts.showMessage(e.toString());
+      AppConsts.showMessage(context, "Error Message", e.toString());
       throw Exception(e.toString());
     }
   }

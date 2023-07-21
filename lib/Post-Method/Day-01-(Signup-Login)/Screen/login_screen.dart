@@ -37,12 +37,13 @@ class _LogInScreenState extends State<LogInScreen> {
       if (response.statusCode == 200) {
         var data = jsonDecode(response.body.toString());
         print(data);
-        AppConsts.showMessage("Logged In Successfully!");
+        AppConsts.showMessage(
+            context, "Console Message", "Logged In Successfully!");
       } else {
-        AppConsts.showMessage("Something Issue!");
+        AppConsts.showMessage(context, "Console Message", "Something Issue!");
       }
     } catch (e) {
-      AppConsts.showMessage(e.toString());
+      AppConsts.showMessage(context, "Console Message", e.toString());
     }
   }
 

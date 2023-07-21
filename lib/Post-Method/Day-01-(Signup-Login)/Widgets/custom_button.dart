@@ -19,11 +19,15 @@ class CustomButton extends StatelessWidget {
       ),
       child: MaterialButton(
         color: Colors.blue,
-        height: 65.0,
+        height: 60.0,
+        minWidth: MediaQuery.sizeOf(context).width,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         onPressed: onPressed,
         child: Text(
           title ?? "title",
+          style: TextStyle(
+            color: Colors.white,
+          ),
         ),
       ),
     );

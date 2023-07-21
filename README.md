@@ -19,10 +19,9 @@ In this course, we will cover various aspects of API integration with Flutter, i
 2. Parsing JSON responses and handling different data structures.
 3. Authentication and authorization mechanisms for accessing secure APIs.
 4. Error handling and handling different types of API responses.
-5. Implementing pagination and loading data incrementally.
-6. Uploading and downloading files using APIs.
-7. Integrating third-party APIs and libraries.
-8. Best practices and tips for efficient API integration.
+5. Uploading and downloading files using APIs.
+6. Integrating third-party APIs and libraries.
+7. Best practices and tips for efficient API integration. 
 
 Throughout the course, we will utilize the JSONPlaceholder website, a RESTful API service, as our primary API source. JSONPlaceholder provides a variety of API endpoints that mimic the behavior of a real API, allowing us to practice various integration techniques.
 

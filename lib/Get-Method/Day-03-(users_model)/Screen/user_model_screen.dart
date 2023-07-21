@@ -24,11 +24,12 @@ class _UserModelScreenState extends State<UserModelScreen> {
         userModelList = data.map((item) => UserModel.fromJson(item)).toList();
         return userModelList;
       } else {
-        AppConsts.showMessage("Failed to fetch users");
+        AppConsts.showMessage(
+            context, "Error Message", "Failed to fetch users");
         throw Exception('Failed to fetch users');
       }
     } catch (e) {
-      AppConsts.showMessage(e.toString());
+      AppConsts.showMessage(context, "Error Message", e.toString());
       throw Exception(e.toString());
     }
   }

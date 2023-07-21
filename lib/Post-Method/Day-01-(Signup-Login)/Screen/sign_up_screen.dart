@@ -1,9 +1,8 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_api_integration/Constants/k.dart';
-import 'package:flutter_api_integration/Post-Method/Day-01-(SignUp)/Widgets/custom_button.dart';
-import 'package:flutter_api_integration/Post-Method/Day-01-(SignUp)/Widgets/custom_textformfield.dart';
-import 'package:http/http.dart';
+import 'package:flutter_api_integration/Post-Method/Day-01-(Signup-Login)/Widgets/custom_button.dart';
+import 'package:flutter_api_integration/Post-Method/Day-01-(Signup-Login)/Widgets/custom_textformfield.dart';
+import 'package:http/http.dart' as http;
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -24,25 +23,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
       const String uri = "https://reqres.in/api/register";
 
       ///response
-      Response response = await post(Uri.parse(uri), body: {
-        "email",
-        email.toString(),
-        "password",
-        password.toString(),
-      });
-
-      print(response.body.toString());
+      var response = await http.post(
+        Uri.parse(uri),
+        body: {
+          "email": email,
+          "password": password,
+        },
+      );
 
       ///statusCode
       if (response.statusCode == 200) {
-        var data = jsonDecode(response.body.toString());
-        print(data);
-        AppConsts.showMessage("Account Created Successfully!");
+        // var data = jsonDecode(response.body.toString());
+        AppConsts.showMessage(
+            context, "Congratulations!", "Account Created Successfully!");
       } else {
-        AppConsts.showMessage("Something Issue!");
+        AppConsts.showMessage(context, "Error", "Something Issue!");
       }
     } catch (e) {
-      AppConsts.showMessage(e.toString());
+      AppConsts.showMessage(context, "Error", e.toString());
     }
   }
 
@@ -58,6 +56,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               controller: emailController!,
               prefixIcon: Icons.email_outlined,
               hintText: "Enter Your Email",
+              isInfoNeeded: true,
             ),
 
             ///Password Field
