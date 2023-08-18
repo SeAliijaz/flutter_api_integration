@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_api_integration/Post-Method/Day-01-(Signup-Login)/Screen/login_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'Post-Method/Day-02-(Upload-Media)/Screens/upload_media_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
 
       ///Home: -> initial Route <-
-      home: LogInScreen(),
+      home: UploadMediaScreen(),
     );
   }
 }

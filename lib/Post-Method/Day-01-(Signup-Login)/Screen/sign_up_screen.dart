@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_api_integration/Constants/k.dart';
-import 'package:flutter_api_integration/Post-Method/Day-01-(Signup-Login)/Widgets/custom_button.dart';
-import 'package:flutter_api_integration/Post-Method/Day-01-(Signup-Login)/Widgets/custom_textformfield.dart';
+import 'package:flutter_api_integration/Post-Method/Custom-Widgets/custom_button.dart';
+import 'package:flutter_api_integration/Post-Method/Custom-Widgets/custom_textformfield.dart';
 import 'package:http/http.dart' as http;
 
 class SignUpScreen extends StatefulWidget {
